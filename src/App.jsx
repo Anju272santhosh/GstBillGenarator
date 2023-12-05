@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import CategoryForm from './CategoryForm';
 import ProductForm from './ProductForm';
 import CategoryList from './CategoryList';
-import ProductList from './ProductList';
+import ProductList from './ProductList'; // Import ProductList component
+import GSTForm from './GstForm';
 
 const App = () => {
   const [categories, setCategories] = useState(() => {
@@ -52,8 +53,9 @@ const App = () => {
 
       {/* Display Products */}
       <h2>Products</h2>
-      <ProductList products={products} />
+      <ProductList products={products} /> {/* Render ProductList component here */}
 
+      {/* Other components or sections */}
     </div>
   );
 };
