@@ -1,9 +1,11 @@
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import CategoryForm from './CategoryForm';
 import ProductForm from './ProductForm';
 import CategoryList from './CategoryList';
-import ProductList from './ProductList'; // Import ProductList component
+import ProductList from './ProductList';
 import GSTForm from './GstForm';
+import Bill from './Bill';
 
 const App = () => {
   const [categories, setCategories] = useState(() => {
@@ -36,27 +38,59 @@ const App = () => {
   }, [products]);
 
   return (
-    <div>
-      <h1>GST System</h1>
+    <Router>
+      <div>
+        <h1>GST System</h1>
 
-      {/* Category Form to add a new category */}
-      <h2>Add Category</h2>
-      <CategoryForm addCategory={addCategory} />
+        {/* Navigation bar */}
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/add-category">Add Category</Link>
+            </li>
+            <li>
+              <Link to="/add-product">Add Product</Link>
+            </li>
+            <li>
+              <Link to="/generate-bill">Generate Bill</Link>
+            </li>
+            <li>
+              <Link to="/category-list">Category List</Link>
+            </li>
+            <li>
+              <Link to="/product-list">Product List</Link>
+            </li>
+          </ul>
+        </nav>
 
-      {/* Display Categories */}
-      <h2>Categories</h2>
-      <CategoryList categories={categories} />
-
-      {/* Product Form to add a new product */}
-      <h2>Add Product</h2>
-      <ProductForm categories={categories} addProduct={addProduct} />
-
-      {/* Display Products */}
-      <h2>Products</h2>
-      <ProductList products={products} /> {/* Render ProductList component here */}
-
-      {/* Other components or sections */}
-    </div>
+        {/* Routes */}
+        <Routes>
+          <Route
+            path="/add-category"
+            element={<CategoryForm addCategory={addCategory} />}
+          />
+          <Route
+            path="/add-product"
+            element={<ProductForm categories={categories} addProduct={addProduct} />}
+          />
+          <Route
+            path="/generate-bill"
+            element={<Bill products={products} />}
+          />
+          <Route
+            path="/category-list"
+            element={<CategoryList categories={categories} />}
+          />
+          <Route
+            path="/product-list"
+            element={<ProductList products={products} />}
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
