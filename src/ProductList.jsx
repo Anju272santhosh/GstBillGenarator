@@ -9,7 +9,7 @@ const ProductList = ({ products, handleDelete }) => {
           <th>Category</th>
           <th>Price</th>
           <th>Quantity</th>
-          {/* <th>Tax</th> */}
+          <th>Tax</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -20,7 +20,7 @@ const ProductList = ({ products, handleDelete }) => {
             <td>{product.category}</td>
             <td>{product.price}</td>
             <td>{product.quantity || 1}</td>
-            {/* <td>{product.tax}</td> */}
+            <td>{product.tax}</td>
             <td>
               <button onClick={() => handleDelete(index)}>Delete</button>
             </td>
