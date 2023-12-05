@@ -23,18 +23,18 @@ const Bill = ({ products }) => {
             <tr key={index}>
               <td>{product.name}</td>
               <td>{product.category}</td>
-              <td>{product.price}</td>
-              <td>{product.tax}</td>
-              <td>{product.price + product.tax}</td>
+              <td>${product.price}</td>
+              <td>${product.tax}</td>
+              <td>${product.price + product.tax}</td>
             </tr>
           ))}
         </tbody>
       </table>
 
       <div className="bill-summary">
-        <p>Subtotal: {subtotal}</p>
-        <p>Total Tax: {totalTax}</p>
-        <p>Total Bill Amount: {totalBill}</p>
+        <p>Subtotal: ${subtotal}</p>
+        <p>Total Tax: ${totalTax}</p>
+        <p>Total Bill Amount: ${totalBill}</p>
       </div>
     </div>
   );
