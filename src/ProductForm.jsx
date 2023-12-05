@@ -6,6 +6,21 @@ const ProductForm = ({ categories, addProduct }) => {
   const [productQuantity, setProductQuantity] = useState('');
   const [productPrice, setProductPrice] = useState('');
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addProduct({
+      name: productName,
+      category: selectedCategory,
+      quantity: parseInt(productQuantity),
+      price: parseFloat(productPrice),
+      tax: calculateTax(selectedCategory, parseFloat(productPrice)),
+    });
+    setProductName('');
+    setSelectedCategory('');
+    setProductQuantity('');
+    setProductPrice('');
+  };
+
   const calculateTax = (category, price) => {
     // Your tax calculation logic here
     // Example logic:
@@ -18,37 +33,37 @@ const ProductForm = ({ categories, addProduct }) => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const tax = calculateTax(selectedCategory, parseFloat(productPrice));
-    const newProduct = {
-      name: productName,
-      category: selectedCategory,
-      quantity: parseInt(productQuantity),
-      price: parseFloat(productPrice),
-      tax: tax,
-    };
-
-    addProduct(newProduct);
-
-    // Reset the form fields
-    setProductName('');
-    setSelectedCategory('');
-    setProductQuantity('');
-    setProductPrice('');
-  };
-
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={productName} onChange={(e) => setProductName(e.target.value)} placeholder="Product Name" />
-      <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+      <input
+        type="text"
+        value={productName}
+        onChange={(e) => setProductName(e.target.value)}
+        placeholder="Product Name"
+      />
+      <select
+        value={selectedCategory}
+        onChange={(e) => setSelectedCategory(e.target.value)}
+      >
         <option value="">Select Category</option>
         {categories.map((category, index) => (
-          <option key={index} value={category.name}>{category.name}</option>
+          <option key={index} value={category.name}>
+            {category.name}
+          </option>
         ))}
       </select>
-      <input type="number" value={productQuantity} onChange={(e) => setProductQuantity(e.target.value)} placeholder="Quantity" />
-      <input type="number" value={productPrice} onChange={(e) => setProductPrice(e.target.value)} placeholder="Product Price" />
+      <input
+        type="number"
+        value={productQuantity}
+        onChange={(e) => setProductQuantity(e.target.value)}
+        placeholder="Quantity"
+      />
+      <input
+        type="number"
+        value={productPrice}
+        onChange={(e) => setProductPrice(e.target.value)}
+        placeholder="Product Price"
+      />
       <button type="submit">Add Product</button>
     </form>
   );
