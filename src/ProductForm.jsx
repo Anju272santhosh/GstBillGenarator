@@ -38,6 +38,7 @@ const ProductForm = ({ categories, addProduct }) => {
   };
 
   return (
+    
     <form onSubmit={handleSubmit}>
       {/* Input fields for product details */}
       <input
@@ -59,6 +60,8 @@ const ProductForm = ({ categories, addProduct }) => {
           </option>
         ))}
       </select>
+      &nbsp
+
       {/* Input fields for quantity and price */}
       <input
         type="number"
@@ -66,12 +69,17 @@ const ProductForm = ({ categories, addProduct }) => {
         onChange={(e) => setProductQuantity(e.target.value)}
         placeholder="Quantity"
       />
+
+      &nbsp
+
       <input
         type="number"
         value={productPrice}
         onChange={(e) => setProductPrice(e.target.value)}
         placeholder="Product Price"
       />
+
+      &nbsp
       {/* Button to submit the form */}
       <button type="submit">Add Product</button>
     </form>
