@@ -4,7 +4,6 @@ import CategoryForm from './CategoryForm';
 import ProductForm from './ProductForm';
 import CategoryList from './CategoryList';
 import ProductList from './ProductList';
-import GSTForm from './GstForm';
 import Bill from './Bill';
 import './style.css';
 
@@ -55,96 +54,62 @@ const App = () => {
     updatedCategories[index].gst = newGSTValue; // Update the GST rate for the specific category
     setCategories(updatedCategories);
   };
-  
-
-
 
   return (
     <Router>
-    <div className="container">
-      <div className="card">
-        <h1>GST System</h1>
+      <div className="container">
+        <div className="card">
+          <h1>GST System</h1>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/add-category">Add Category</Link>
+              </li>
+              <li>
+                <Link to="/add-product">Add Product</Link>
+              </li>
+              <li>
+                <Link to="/generate-bill">Generate Bill</Link>
+              </li>
+              <li>
+                <Link to="/category-list">Category List</Link>
+              </li>
+              <li>
+                <Link to="/product-list">Product List</Link>
+              </li>
+            </ul>
+          </nav>
 
-        {/* Navigation bar */}
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/add-category">Add Category</Link>
-            </li>
-            <li>
-              <Link to="/add-product">Add Product</Link>
-            </li>
-            <li>
-              <Link to="/generate-bill">Generate Bill</Link>
-            </li>
-            <li>
-              <Link to="/category-list">Category List</Link>
-            </li>
-            <li>
-              <Link to="/product-list">Product List</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* Routes */}
-        <Routes>
-        <Route path="/" element={<Home />} /> {/* Render the Home component at the root path */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/add-category" element={<CategoryForm addCategory={addCategory} />} />
+            <Route path="/add-product" element={<ProductForm categories={categories} addProduct={addProduct} />} />
+            <Route path="/generate-bill" element={<Bill products={products} />} />
             <Route
-              path="/add-category"
-              element={<CategoryForm addCategory={addCategory} />}
-            />
-
-
-
-
-          <Route
-            path="/add-category"
-            element={<CategoryForm addCategory={addCategory} />}
-          />
-          <Route
-            path="/add-product"
-            element={<ProductForm categories={categories} addProduct={addProduct} />}
-          />
-          <Route
-            path="/generate-bill"
-            element={<Bill products={products} />}
-          />
-          <Route
-          path="/category-list"
-        element={
-        <CategoryList
-        categories={categories}
-        handleDelete={handleDelete}
-        handleGSTUpdate={handleGSTUpdate}/>}
-          />
-
-          <Route
-            path="/product-list"
-            element={
-              <ProductList
-                products={products}
-                handleDelete={handleDeleteProduct}/>}
-              />
-
-        </Routes>
+              path="/category-list"
+              element={<CategoryList categories={categories} handleDelete={handleDelete} handleGSTUpdate={handleGSTUpdate} />}
+            />
+            <Route
+              path="/product-list"
+              element={<ProductList products={products} handleDelete={handleDeleteProduct} />}
+            />
+          </Routes>
+        </div>
       </div>
-    </div>
     </Router>
   );
 };
+
 const Home = () => {
   return (
-    <div>
+    <div className='home'>
       <h2>Welcome to GST System</h2>
-      <p>This is the home page content.
-      Hi h</p>
+      <p>This is the home page content.</p>
     </div>
   );
 };
-
-
 
 export default App;
