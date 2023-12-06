@@ -1,60 +1,190 @@
-/* App.css */
+/* style.css */
+
+/* General styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #D8C4B6; /* Background color */
+  color: #dcd2d2; /* Text color */
+  font-size: 16px;
+}
+
+.container {
+ 
+  max-width: 1400px;
+  margin: 20 auto;
+  padding: 200px;
+}
+
+/* Navigation bar */
+nav ul {
+  list-style: none;
+  padding: 20;
+  margin: 10;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 23px;
+  color: #c5b0b0; 
+  font-/* Navigation link color */
+}
+
+nav ul li a:hover {
+  color: #007bff; 
+  /* Hover color */
+}
+
+/* Card */
+.card {
+  background-color: #12100f;
+  box-shadow: 0 4px 8px rgba(86, 81, 81, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+.home {
+  color: #d8cdcd; /* Your desired font color */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.Nobill {
+  color: #aca7a7;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+.bill h2{
+  color: #eae4e4;
+}
+h1 {
+ 
+ font-size: 50px;
+  color: #cbc8c8; /* Heading color */
+}
+
+.bill-summary{
+  font-size: large;
+  color: #c9cfd6;
+}
+/* Home content */
+.home-content {
+  margin-top: 40px;
+
+
+
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff; /* Primary button color */
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Hover color for primary button */
+}
+
+/* Forms */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
   
-  .card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+}
+
+
+table th {
+  padding: 8px;
+  border: 1px solid #ddd;
+  font-size: 23px;
+  margin: 20px;
+
+}
+table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  color: #ccc;
+  font-style: oblique;
+  font-weight: 400;
+  font-size: 20px;
   
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-  }
-  
-  nav ul li {
-    margin-bottom: 10px;
-    transition: all 0.3s ease;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #333;
-    display: block;
-    padding: 10px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    background-color: #f0f0f0;
-    color: #000;
-  }
-  
-  h1 {
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .link-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
+}
+
+table th {
+  background-color: #f5f5f5;
+}
+/* style.css */
+
+/* Additional button styles */
+.btn-secondary {
+  background-color: #d3d8dd; /* Secondary button color */
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #e2e5e8; /* Hover color for secondary button */
+}
+
+/* Card hover effect */
+.card:hover {
+  box-shadow: 0 8px 16px #cbc8c8);
+  transform: translateY(-5px);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Styling for header */
+header {
+  background-color: #c9cfd6; /* Header background color */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Footer */
+footer {
+  background-color: #a99696; /* Footer background color */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Add any additional styles or elements as needed */
