@@ -1,6 +1,16 @@
 import React from 'react';
 
 const Bill = ({ products }) => {
+  // Check if products are available to generate the bill
+  if (products.length === 0) {
+    return (
+      <div>
+        <h2>No Items Added</h2>
+        <p>Please select a category and product to generate a bill.</p>
+      </div>
+    );
+  }
+
   const subtotal = products.reduce((total, product) => total + product.price, 0);
   const totalTax = products.reduce((total, product) => total + product.tax, 0);
   const totalBill = subtotal + totalTax;
