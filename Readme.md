@@ -1,4 +1,4 @@
-![Screenshot 2023-12-06 173713](https://github.com/Anju272santhosh/GstBillGenarator/assets/87237845/8d9302b7-7b5b-48aa-a9e2-c4c4d3b41546)#GST BILL GENERATOR 
+#GST BILL GENERATOR 
 
 Welcome to our intuitive GST BILL generator, developed using React.js and Vite! Our tool allows you to effortlessly create invoices by customizing product categories with their respective GST percentages, adding new products, and seamlessly generating bills by selecting desired products.
 
