@@ -59,9 +59,9 @@ const Bill = ({ products }) => {
               <tr key={index}>
                 <td>{product.name}</td>
                 <td>{product.category}</td>
-                <td>${product.price}</td>
-                <td>${product.tax}</td>
-                <td>${product.price + product.tax}</td>
+                <td>Rs{product.price}</td>
+                <td>Rs{product.tax}</td>
+                <td>{product.price + product.tax}</td>
               </tr>
             ))}
           </tbody>
@@ -69,15 +69,16 @@ const Bill = ({ products }) => {
 
         {/* Bill summary */}
         <div className="bill-summary">
-          <p>Subtotal: ${subtotal}</p>
-          <p>Total Tax: ${totalTax}</p>
-          <p>Total Bill Amount: ${totalBill}</p>
+          <p>Subtotal: Rs{subtotal}</p>
+          <p>Total Tax: Rs{totalTax}</p>
+          <p>Total Bill Amount: Rs{totalBill}</p>
         </div>
 
         {/* Print button */}
         <button className="print-button" onClick={handlePrint}>
           Print Bill
         </button>
+
       </div>
     );
   }
