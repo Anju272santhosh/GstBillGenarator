@@ -72,7 +72,7 @@ const App = () => {
                 <Link to="/add-product">Add Product</Link>
               </li>
               <li>
-                <Link to="/generate-bill">Generate Bill</Link>
+                <Link to="/generate-bill">Generated Bill</Link>
               </li>
               <li>
                 <Link to="/category-list">Category List</Link>
@@ -96,6 +96,9 @@ const App = () => {
               path="/product-list"
               element={<ProductList products={products} handleDelete={handleDeleteProduct} />}
             />
+
+           
+        
           </Routes>
         </div>
       </div>
