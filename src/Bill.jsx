@@ -31,6 +31,7 @@ const Bill = ({ products }) => {
       <div className='Nobill'>
         <h2>No Items Added</h2>
         <p>Please select a category and product to generate a bill.</p>
+        <button type="button" class="btn btn-light" onClick={()=>window.location.href="/add-product"}>  generate</button>
       </div>
     );
   } else {
@@ -78,6 +79,8 @@ const Bill = ({ products }) => {
         <button className="print-button" onClick={handlePrint}>
           Print Bill
         </button>
+        &nbsp
+        <button type="button" class="btn btn-light" onClick={()=>window.location.href="/add-product"}>  ADD </button>
 
       </div>
     );
