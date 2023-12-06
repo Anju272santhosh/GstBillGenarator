@@ -107,7 +107,11 @@ const Home = () => {
   return (
     <div className='home'>
       <h2>Welcome to GST System</h2>
-      <p>This is the home page content.</p>
+      <p>Welcome to our intuitive GST BILL generator, developed using React.js and Vite! Our tool allows you to effortlessly create invoices by customizing product categories with their respective GST percentages, adding new products, and seamlessly generating bills by selecting desired products.
+
+One of the standout features of our solution is its use of local storage, enabling the convenient storage and retrieval of product categories and their associated items. This ensures that your information remains easily accessible and readily available whenever you need it.
+
+Experience the simplicity of managing invoices and product information within our user-friendly interface. Streamline your billing process and tailor invoices to suit your specific needs with ease..</p>
     </div>
   );
 };
