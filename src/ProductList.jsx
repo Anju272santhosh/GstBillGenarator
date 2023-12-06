@@ -5,6 +5,7 @@ const ProductList = ({ products, handleDelete }) => {
     <table>
       <thead>
         <tr>
+          {/* Table headers for product details */}
           <th>Product Name</th>
           <th>Category</th>
           <th>Price</th>
@@ -14,13 +15,15 @@ const ProductList = ({ products, handleDelete }) => {
         </tr>
       </thead>
       <tbody>
+        {/* Displaying product details */}
         {products.map((product, index) => (
           <tr key={index}>
             <td>{product.name}</td>
             <td>{product.category}</td>
             <td>{product.price}</td>
-            <td>{product.quantity || 1}</td>
+            <td>{product.quantity || 1}</td> {/* Default quantity to 1 if not provided */}
             <td>{product.tax}</td>
+            {/* Button to delete a product */}
             <td>
               <button onClick={() => handleDelete(index)}>Delete</button>
             </td>
